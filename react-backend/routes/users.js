@@ -1,9 +1,42 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+const userController = require('../controllers/userController')
+
+router.get('/', function(req, res) {
+  const users = userController.getAllUsers();
+  res.status(200).send(users);
+});
+
+router.post('/', function(req, res) {
+  const body = req.body;
+  const user = body.user;
+  try {
+    userController.addUser(user);
+    res.status(201).send(user);
+  } catch (e) {
+    res.status(400).send(e.message());
+  }
+});
+
+router.get('/:login', function(req, res) {
+  const userLogin = req.params.login;
+  try {
+    const targetUser = userController.getUser(userLogin)
+    res.status(200).send(targetUser);
+  } catch (e) {
+    res.sendStatus(404);
+  }
+});
+
+router.delete('/:login', function(req, res) {
+  const userLogin = req.params.login;
+  try {
+    userController.deleteUser(userLogin);
+    res.status(204);
+  } catch (e) {
+    res.sendStatus(404);
+  }
 });
 
 module.exports = router;

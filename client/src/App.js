@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = { users: [] }
+
+  componentDidMount() {
+    fetch('/users')
+        .then(res => res.json())
+        .then(users => this.setState({ users }))
+        .catch(console.error);
+  }
+
+  render() {
+    return (
+        <div className="App">
+          <h1 className="App-header">Users</h1>
+          {this.state.users.map(user =>
+              <div key={user.login}>{JSON.stringify(user)}</div>
+          )}
+        </div>
+    );
+  }
 }
 
 export default App;
