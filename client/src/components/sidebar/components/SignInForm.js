@@ -1,5 +1,6 @@
 import React from 'react';
 import UserContext from '../../app/UserContext';
+import {validateLogin, validatePassword} from './validators';
 
 class SignInForm extends React.Component {
     static contextType = UserContext;
@@ -7,43 +8,14 @@ class SignInForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            errorMessageStyle: {display: 'none'}
+            errorMessageStyle: {display: 'none'},
+            inputFieldsCorrectness: {
+                login: 'ok',
+                password: 'ok',
+            }
         }
     }
 
-    validateLogin(login) {
-        if (typeof login !== 'string' || login.length === 0) {
-            return {
-                isValid: false,
-                message: 'Login should be a non-empty string',
-            };
-        }
-        const regex = /^\w{5,20}$/
-        if (!regex.test(login)) {
-            return {
-                isValid: false,
-                message: `Login should match ${regex}`,
-            };
-        }
-        return {isValid: true};
-    }
-
-    validatePassword(password) {
-        if (typeof password !== 'string' || password.length === 0) {
-            return {
-                isValid: false,
-                message: 'Password should be a non-empty string',
-            };
-        }
-        const regex = /^\w{5,20}$/
-        if (!regex.test(password)) {
-            return {
-                isValid: false,
-                message: `Password should match ${regex}`,
-            };
-        }
-        return {isValid: true};
-    }
 
     showError(message) {
         document.getElementsByClassName('SignInForm__error')[0].innerHTML = message;
@@ -61,34 +33,47 @@ class SignInForm extends React.Component {
         });
     }
 
+    setInputFieldCorrectness(fieldType, isCorrect) {
+        this.setState(state => (
+            state.inputFieldsCorrectness[fieldType] = isCorrect ? 'ok' : 'error', state)
+        );
+    }
+
     handleSubmit = async (event) => {
         event.preventDefault();
-        const login = event.target[0].value;
-        const password = event.target[1].value;
+        const user = {
+            login: event.target[0].value,
+            password: event.target[1].value,
+        }
 
         const errors = [];
-        {
-            const {isValid, message} = this.validateLogin(login);
-            if (!isValid)
-                errors.push(message);
+        for (const [fieldName, fieldValue] of Object.entries(user)) {
+            let validationResult = null;
+            switch (fieldName) {
+                case 'login':
+                    validationResult = validateLogin(fieldValue);
+                    break;
+                case 'password':
+                    validationResult = validatePassword(fieldValue);
+                    break;
+                default:
+                    errors.push('Unexpected form field');
+                    continue;
+            }
+            this.setInputFieldCorrectness(fieldName, validationResult.isValid)
+            if (!validationResult.isValid)
+                errors.push(validationResult.message);
         }
-        {
-            const {isValid, message} = this.validatePassword(password);
-            if (!isValid)
-                errors.push(message);
-        }
-
         if (errors.length > 0) {
             this.showError(errors[0]);
             return;
         }
 
-        const response = await fetch(`/api/v1/users/${login}/${password}`);
+        const response = await fetch(`/api/v1/users/${user.login}/${user.password}`);
         switch (response.status) {
             case 200:
                 this.hideErrors();
                 const user = await response.json();
-                console.error(user);
                 this.context.login(user);
                 break;
             case 404:
@@ -100,14 +85,20 @@ class SignInForm extends React.Component {
     }
 
     render() {
+        const loginClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.login}`;
+        const passwordClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.password}`;
+
         return (
             <div className='AuthBlock__form-wrapper SignInForm-wrapper'>
                 <form className='AuthBlock__form SignInForm' onSubmit={this.handleSubmit}>
-                    <input className='SignInForm__login' type='text' placeholder="Login"/>
-                    <input className='SignInForm__password' type='password' placeholder="Password"/>
-                    <button className='SignInForm__submit-btn' type='submit'>Sign In</button>
+                    <input className={loginClass}
+                           type='text' placeholder="Login"/>
+                    <input className={passwordClass}
+                           type='password' placeholder="Password"/>
+                    <button className='AuthBlock__submit-btn SignInForm__submit-btn'
+                            type='submit'>Sign In</button>
                 </form>
-                <div className='SignInForm__error' style={this.state.errorMessageStyle}></div>
+                <div className='AuthBlock__error SignInForm__error' style={this.state.errorMessageStyle}></div>
             </div>
         )
     }

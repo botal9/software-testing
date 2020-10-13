@@ -9,13 +9,12 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  const body = req.body;
-  const user = body.user;
+  const user = req.body;
   try {
       userController.addUser(user);
       res.status(201).send(user);
   } catch (e) {
-      res.status(400).send(e.message());
+      res.status(400).send(e.message);
   }
 });
 

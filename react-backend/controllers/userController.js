@@ -2,8 +2,8 @@ const users = {
     'admin': {
         login: 'admin',
         password: 'admin',
-        name: 'Vasya',
-        surname: 'Pupkin',
+        email: 'admin@admin.ru',
+        name: 'Vasya Pupkin',
         salary: '300kk/ns'
     }
 };

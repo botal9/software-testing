@@ -6,6 +6,8 @@
 .AuthBlock {
     background: rgba(223, 217, 226, .5);
     border: 1px solid rgb(77, 126, 168);
+
+    overflow: hidden;
 }
 
 .AuthBlock__form {
@@ -13,7 +15,7 @@
     padding: 10px 20px;
 }
 
-.AuthBlock__form input {
+.AuthBlock__input {
     display: block;
 
     margin-top: 10px;
@@ -21,10 +23,16 @@
     height: 30px;
 
     box-sizing: border-box;
+    outline: none;
 }
 
-.AuthBlock__form input:focus {
+.AuthBlock .input-ok:focus {
     border: 1px solid rgb(77, 126, 168);
+}
+
+.AuthBlock .input-error,
+.AuthBlock .input-error:focus {
+    border: 1px solid rgb(155, 29, 32);
 }
 
 .AuthBlock__header-box {
@@ -46,7 +54,7 @@
     text-decoration: none;
 }
 
-.SignInForm__submit-btn {
+.AuthBlock__submit-btn {
     display: block;
 
     width: 100%;
@@ -58,11 +66,11 @@
     box-sizing: border-box;
 }
 
-.SignInForm input {
+.AuthBlock__input  {
     padding: 5px;
 }
 
-.SignInForm__error {
+.AuthBlock__error {
     padding: 0 20px 10px;
 
     color: rgb(155, 29, 32);
