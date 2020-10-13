@@ -13,13 +13,13 @@ function addUser(user) {
         user.login === undefined) {
         throw Error('Trying to add invalid user');
     }
-    if (this.users[user.login] !== undefined) {
+    if (users[user.login] !== undefined) {
         throw Error('Trying to add existing user');
     }
     users[user.login] = user;
 }
 
-function getUser(userLogin) {
+function getUserByLogin(userLogin) {
     return users[userLogin] || null;
 }
 
@@ -45,4 +45,4 @@ function updateUser(userLogin, userInfo) {
     });
 }
 
-module.exports = { addUser, getUser, deleteUser, getAllUsers, updateUser };
+module.exports = { addUser, getUserByLogin, deleteUser, getAllUsers, updateUser };
