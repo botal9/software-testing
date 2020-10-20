@@ -3,11 +3,87 @@
     width: 30%;
 }
 
+@media (max-width: 900px) {
+    .AuthBlock__form input {
+        width: 235px;
+    }
+}
+
 .AuthBlock {
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+
     background: rgba(223, 217, 226, .5);
     border: 1px solid rgb(77, 126, 168);
 
     overflow: hidden;
+}
+
+.UserInfoBlock {
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+
+    background: rgba(223, 217, 226, .5);
+    border: 1px solid rgb(77, 126, 168);
+
+    overflow: hidden;
+}
+
+.UserInfoBlock__header {
+    padding: 15px;
+
+    display: flex;
+}
+
+.UserInfoBlock__header .avatar {
+    width: 80px;
+    height: 60px;
+
+    background-image: url("../../images/pika-min.jpeg");
+    background-size: 80px;
+}
+
+.UserInfoBlock__header .user {
+    margin-left: 15px;
+
+    text-align: left;
+}
+
+.UserInfoBlock__header .user-login {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.UserInfoBlock__header .logout {
+    margin-top: 3px;
+
+    cursor: pointer;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+.UserInfoBlock__header .logout:hover {
+    text-decoration: underline;
+}
+
+.UserInfoBlock__user-info-list {
+    padding: 0 15px 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.UserInfoBlock__user-info-list .list-item {
+    line-height: 36px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.UserInfoBlock__user-info-list .list-item:hover {
+    color: rgb(77, 126, 168);
+    text-decoration: underline;
 }
 
 .AuthBlock__form {
@@ -24,6 +100,10 @@
 
     box-sizing: border-box;
     outline: none;
+}
+
+.AuthBlock input:focus {
+    border: 1px solid rgb(77, 126, 168) !important;
 }
 
 .AuthBlock .input-ok:focus {
@@ -44,6 +124,8 @@
 
     border: none;
     box-sizing: border-box;
+
+    text-align: center;
 }
 
 .AuthBlock__header-btn {
@@ -75,15 +157,4 @@
 
     color: rgb(155, 29, 32);
     font-size: 12px;
-}
-
-@media (max-width: 900px) {
-    .Sidebar {
-        min-width: -moz-fit-content;
-        min-width: -webkit-fit-content;
-    }
-
-    .AuthBlock__form input {
-        width: 235px;
-    }
 }

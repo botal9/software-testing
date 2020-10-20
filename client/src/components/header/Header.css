@@ -57,7 +57,7 @@ header > a {
     line-height: 10vh;
     padding: 0 1.5vw;
     font-size: 18px;
-    /*margin-right: 3vw;*/
+    font-weight: 500;
     text-decoration: none;
 }
 
