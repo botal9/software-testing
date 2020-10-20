@@ -9,13 +9,12 @@
 .content-wrapper {
     display: block;
     padding: 0 15%;
-
 }
 
 .content {
     display: flex;
     margin: 0 auto;
-    padding: 1% 0 0;
+    padding: 15px 0 0;
 
     width: 100%;
 }

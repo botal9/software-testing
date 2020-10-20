@@ -96,7 +96,8 @@ class SignInForm extends React.Component {
                     <input className={passwordClass}
                            type='password' placeholder="Password"/>
                     <button className='AuthBlock__submit-btn SignInForm__submit-btn'
-                            type='submit'>Sign In</button>
+                            type='submit'>Sign In
+                    </button>
                 </form>
                 <div className='AuthBlock__error SignInForm__error' style={this.state.errorMessageStyle}></div>
             </div>

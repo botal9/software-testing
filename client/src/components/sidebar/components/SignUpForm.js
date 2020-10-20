@@ -84,9 +84,9 @@ class SignUpForm extends React.Component {
 
         const response = await fetch(`/api/v1/users/`, {
             method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
             body: JSON.stringify(user)
         });
         switch (response.status) {

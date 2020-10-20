@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import Header from '../header/Header';
 import UserContext from './UserContext'
 import MainContent from '../main-content/MainContent';
 import Sidebar from '../sidebar/Sidebar';
+import Feed from '../feed/Feed';
 
 class App extends React.Component {
     constructor(props) {
@@ -36,33 +37,25 @@ class App extends React.Component {
         });
     }
 
-    // componentDidMount() {
-    //     fetch('/users')
-    //         .then(res => res.json())
-    //         .then(users => this.setState({ users }))
-    //         .catch(console.error);
-    //     fetch('/posts')
-    //         .then(res => res.json())
-    //         .then(posts => this.setState({ posts }))
-    //         .catch(console.error);
-    // }
-
     render() {
         return (
             <div className='App'>
-                <UserContext.Provider value={ this.state.userState }>
+                <UserContext.Provider value={this.state.userState}>
                     <Router>
-                        <Header />
+                        <Header/>
                         <div className='content-wrapper'>
                             <div className='content'>
                                 <main>
                                     <Switch>
-                                        <Route path='/' exact component={MainContent}/>
-                                        <Route path='/Feed' component={MainContent}/>
+                                        <Route path='/Comments' component={MainContent}/>
+                                        <Route path='/Feed' component={Feed}/>
                                         <Route path='/Post/:id' component={MainContent}/>
+                                        <Route path='/Posts' component={MainContent}/>
+                                        <Route path='/Users' component={MainContent}/>
+                                        <Redirect from='/' to='/Feed'/>
                                     </Switch>
                                 </main>
-                                <Sidebar />
+                                <Sidebar/>
                             </div>
                         </div>
                     </Router>

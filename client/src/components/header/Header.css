@@ -1,4 +1,4 @@
-header {
+.Header {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
 
@@ -10,25 +10,25 @@ header {
 }
 
 @media (max-width: 900px) {
-    header {
+    .Header {
         padding: 0 5%;
     }
 }
 
-header > a {
+.Header > a {
     display: flex;
 
     text-decoration: none;
 }
 
-.header__logo {
+.Header-logo {
     margin: auto 0;
 
     width: 65px;
     height: 65px;
 }
 
-.header__site-name {
+.Header-site-name {
     display: flex;
     justify-content: center;
     align-items: center;

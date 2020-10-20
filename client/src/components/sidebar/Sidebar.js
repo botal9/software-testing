@@ -8,11 +8,11 @@ import './Sidebar.css'
 class Sidebar extends React.Component {
     static contextType = UserContext;
 
-    state = { posts: [] };
+    state = {posts: []};
 
     render() {
         const value = this.context;
-        const sidebarContent = value.user ? <UserInfoBlock /> : <AuthBlock />
+        const sidebarContent = value.user ? <UserInfoBlock/> : <AuthBlock/>
 
         return (
             <aside className='Sidebar'>
