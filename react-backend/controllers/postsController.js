@@ -4,6 +4,22 @@ const posts = {
         text: 'Hello, world!',
         author: 'admin',
         postId: 1,
+    },
+    2: {
+        title: 'Post #2',
+        text: 'Memes <3',
+        author: 'admin',
+        postId: 2,
+    },
+    3: {
+        title: 'Bomber be like',
+        text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
+            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
+            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
+            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
+            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        author: 'admin',
+        postId: 2,
     }
 };
 
@@ -26,6 +42,13 @@ function getPostById(id) {
     return posts[id] || null;
 }
 
+function getAllPostsByUser(userLogin) {
+    if (typeof userLogin !== 'string')
+        return []
+
+    return getAllPosts().filter(post => post.author === userLogin);
+}
+
 function getAllPosts() {
     const postList = []
     for (const postId in posts) {
@@ -34,4 +57,4 @@ function getAllPosts() {
     return postList;
 }
 
-module.exports = { addPost, getPostById, getAllPosts };
+module.exports = { addPost, getPostById, getAllPosts, getAllPostsByUser };

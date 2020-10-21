@@ -5,9 +5,11 @@ function Post({post}) {
     return (
         <article className='Post'>
             <div className='Post-main'>
-                <header className='Post-header'>{post.title}</header>
+                <header className='Post-header'>
+                    <h2 className='Post-title'>{post.title}</h2>
+                </header>
                 <div className='Post-content'>
-                    {post.text}
+                    <p>{post.text}</p>
                 </div>
                 <footer className='Post-footer'>{post.author}</footer>
             </div>

@@ -1,3 +1,49 @@
 .Post-main {
+    overflow: hidden;
+    min-height: 100px;
+    width: 100%;
 
+    margin-top: 15px;
+
+    border: 2px solid rgb(223, 217, 226);
+    box-sizing: border-box;
+}
+
+.Post-header {
+    padding: 20px 20px 0;
+    margin-bottom: 10px;
+}
+
+.Post-title {
+    margin: 0;
+    display: inline-block;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    cursor: pointer;
+    font-weight: 400;
+    color: #555;
+}
+
+.Post-content {
+    padding: 0 20px 10px;
+    overflow: hidden;
+}
+
+.Post-content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Post-footer {
+    padding: 0 20px;
+
+    border-top: 2px solid rgb(223, 217, 226);
+    box-sizing: border-box;
+
+    text-align: right;
+    text-transform: capitalize;
+    line-height: 30px;
 }

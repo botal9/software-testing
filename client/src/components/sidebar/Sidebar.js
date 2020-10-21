@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import UserContext from '../app/UserContext';
 import AuthBlock from './components/AuthBlock';
 import UserInfoBlock from './components/UserInfoBlock';

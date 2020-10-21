@@ -1,17 +1,17 @@
 import React from 'react';
 
 function AuthBlockHeader(props) {
-    const color = 'rgb(77, 126, 168)';
+    const color = 'rgb(223, 217, 226)';
     const border = `1px solid ${color}`;
     const leftPartStyle = props.isSignInForm ? {
         borderRight: border,
     } : {
         borderBottom: border,
-        boxShadow: `inset -1px -1px 2px 0 ${color}`,
+        boxShadow: `inset -2px -2px 3px 0 ${color}`,
     }
     const rightPartStyle = props.isSignInForm ? {
         borderBottom: border,
-        boxShadow: `inset 1px -1px 2px 0 ${color}`,
+        boxShadow: `inset 2px -2px 3px 0 ${color}`,
     } : {
         borderLeft: border,
     }

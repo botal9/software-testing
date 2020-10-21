@@ -28,4 +28,14 @@ router.get('/:id', function(req, res) {
     }
 });
 
+router.get('/by-user/:login', function(req, res) {
+    const userLogin = req.params.login;
+    try {
+        const userPosts = postController.getAllPostsByUser(userLogin)
+        res.status(200).send(userPosts);
+    } catch (e) {
+        res.sendStatus(404);
+    }
+});
+
 module.exports = router;
