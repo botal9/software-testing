@@ -1,4 +1,5 @@
 import React from 'react';
+import './AuthBlockHeader.css'
 
 function AuthBlockHeader(props) {
     const color = 'rgb(223, 217, 226)';
@@ -17,12 +18,12 @@ function AuthBlockHeader(props) {
     }
 
     return (
-        <div className='AuthBlock__header-box'>
-            <div className={`AuthBlock__header`} style={leftPartStyle}>
-                <a href='#' onClick={props.setSignInForm} className='AuthBlock__header-btn'>Sign In</a>
+        <div className='AuthBlock-header-wrapper'>
+            <div className='AuthBlock-header' style={leftPartStyle}>
+                <a href='#' onClick={props.setSignInForm} className='header-swap-btn'>Sign In</a>
             </div>
-            <div className={`AuthBlock__header`} style={rightPartStyle}>
-                <a href='#' onClick={props.setSignUpForm} className='AuthBlock__header-btn'>Sign Up</a>
+            <div className='AuthBlock-header' style={rightPartStyle}>
+                <a href='#' onClick={props.setSignUpForm} className='header-swap-btn'>Sign Up</a>
             </div>
         </div>
     )

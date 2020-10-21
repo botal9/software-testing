@@ -1,7 +1,7 @@
 import React from 'react';
 import UserContext from '../app/UserContext';
 import AuthBlock from './components/AuthBlock';
-import UserInfoBlock from './components/UserInfoBlock';
+import UserInfo from './components/UserInfo';
 import './Sidebar.css'
 
 
@@ -12,11 +12,13 @@ class Sidebar extends React.Component {
 
     render() {
         const value = this.context;
-        const sidebarContent = value.user ? <UserInfoBlock/> : <AuthBlock/>
+        const sidebarContent = value.user ? <UserInfo/> : <AuthBlock/>
 
         return (
             <aside className='Sidebar'>
-                {sidebarContent}
+                <div className='Sidebar-block'>
+                    {sidebarContent}
+                </div>
             </aside>
         )
     }

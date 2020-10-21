@@ -22,7 +22,7 @@ class SignUpForm extends React.Component {
     }
 
     showError(message) {
-        document.getElementsByClassName('SignUpForm__error')[0].innerHTML = message;
+        document.getElementsByClassName('SignUpForm-error')[0].innerHTML = message;
         this.setState({
             ...this.state,
             errorMessageStyle: {display: 'block'}
@@ -30,7 +30,7 @@ class SignUpForm extends React.Component {
     }
 
     hideErrors() {
-        document.getElementsByClassName('SignUpForm__error')[0].innerHTML = '';
+        document.getElementsByClassName('SignUpForm-error')[0].innerHTML = '';
         this.setState({
             ...this.state,
             errorMessageStyle: {display: 'none'}
@@ -105,14 +105,14 @@ class SignUpForm extends React.Component {
     }
 
     render() {
-        const loginClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.login}`;
-        const nameClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.name}`;
-        const emailClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.email}`;
-        const passwordClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.password}`;
+        const loginClass = `input-${this.state.inputFieldsCorrectness.login}`;
+        const nameClass = `input-${this.state.inputFieldsCorrectness.name}`;
+        const emailClass = `input-${this.state.inputFieldsCorrectness.email}`;
+        const passwordClass = `input-${this.state.inputFieldsCorrectness.password}`;
 
         return (
-            <div className='AuthBlock__form-wrapper SignUpForm-wrapper'>
-                <form className='AuthBlock__form SignUpForm' onSubmit={this.handleSubmit}>
+            <div className='AuthBlock-form-wrapper SignUpForm-wrapper'>
+                <form className='AuthBlock-form SignUpForm' onSubmit={this.handleSubmit}>
                     <input className={loginClass}
                            type='text' placeholder="Login"/>
                     <input className={nameClass}
@@ -121,11 +121,11 @@ class SignUpForm extends React.Component {
                            type='text' placeholder="E-mail"/>
                     <input className={passwordClass}
                            type='password' placeholder="Password"/>
-                    <button className='AuthBlock__submit-btn SignUpForm__submit-btn'
-                            type='submit'>Sign Up
-                    </button>
+                    <button className='submit-btn' type='submit'>Sign Up</button>
                 </form>
-                <div className='AuthBlock__error SignUpForm__error' style={this.state.errorMessageStyle}></div>
+                <div className='AuthBlock-from-error SignUpForm-error'
+                     style={this.state.errorMessageStyle}>
+                </div>
             </div>
         )
     }

@@ -5,12 +5,12 @@
 
     margin-top: 15px;
 
-    border: 2px solid rgb(223, 217, 226);
+    border: 2px solid var(--color-lavender);
     box-sizing: border-box;
 }
 
 .Post-header {
-    padding: 20px 20px 0;
+    padding: 15px 20px 0;
     margin-bottom: 10px;
 }
 
@@ -24,7 +24,7 @@
 
     cursor: pointer;
     font-weight: 400;
-    color: #555;
+    color: rgb(68, 69, 84);
 }
 
 .Post-content {
@@ -40,9 +40,10 @@
 .Post-footer {
     padding: 0 20px;
 
-    border-top: 2px solid rgb(223, 217, 226);
+    border-top: 2px solid var(--color-lavender);
     box-sizing: border-box;
 
+    font-size: 0.9rem;
     text-align: right;
     text-transform: capitalize;
     line-height: 30px;

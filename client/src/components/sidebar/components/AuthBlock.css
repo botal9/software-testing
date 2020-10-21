@@ -1,0 +1,58 @@
+
+.AuthBlock {
+    border: 2px solid var(--color-lavender);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.AuthBlock-form {
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.AuthBlock input {
+    display: block;
+
+    width: 100%;
+    height: 30px;
+
+    padding: 5px;
+    border: 1px solid var(--color-lavender);
+    margin-top: 10px;
+
+    box-sizing: border-box;
+    outline: none;
+}
+
+.AuthBlock input:focus {
+    border: 1px solid var(--color-blue) !important;
+}
+
+.AuthBlock .input-ok:focus {
+    border: 1px solid var(--color-blue);
+}
+
+.AuthBlock .input-error,
+.AuthBlock .input-error:focus {
+    border: 1px solid var(--color-red);
+}
+
+.AuthBlock-form-error {
+    padding: 0 20px 10px;
+
+    color: var(--color-red);
+    font-size: 12px;
+}
+
+.AuthBlock .submit-btn {
+    display: block;
+
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+
+    background-color: var(--color-blue);
+    box-sizing: border-box;
+}

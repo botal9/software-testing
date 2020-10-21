@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import AuthBlockHeader from './AuthBlockHeader';
 import SignInForm from './SignInForm';
 import SignUpForm from './SignUpForm';
+import './AuthBlock.css'
 
 function AuthBlock() {
     const [isSignInForm, setIsSignInForm] = useState(true);

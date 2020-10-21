@@ -18,7 +18,7 @@ class SignInForm extends React.Component {
 
 
     showError(message) {
-        document.getElementsByClassName('SignInForm__error')[0].innerHTML = message;
+        document.getElementsByClassName('SignInForm-error')[0].innerHTML = message;
         this.setState({
             ...this.state,
             errorMessageStyle: {display: 'block'}
@@ -26,7 +26,7 @@ class SignInForm extends React.Component {
     }
 
     hideErrors() {
-        document.getElementsByClassName('SignInForm__error')[0].innerHTML = '';
+        document.getElementsByClassName('SignInForm-error')[0].innerHTML = '';
         this.setState({
             ...this.state,
             errorMessageStyle: {display: 'none'}
@@ -85,21 +85,21 @@ class SignInForm extends React.Component {
     }
 
     render() {
-        const loginClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.login}`;
-        const passwordClass = `AuthBlock__input input-${this.state.inputFieldsCorrectness.password}`;
+        const loginClass = `input-${this.state.inputFieldsCorrectness.login}`;
+        const passwordClass = `input-${this.state.inputFieldsCorrectness.password}`;
 
         return (
-            <div className='AuthBlock__form-wrapper SignInForm-wrapper'>
-                <form className='AuthBlock__form SignInForm' onSubmit={this.handleSubmit}>
+            <div className='form-wrapper SignInForm-wrapper'>
+                <form className='AuthBlock-form SignInForm' onSubmit={this.handleSubmit}>
                     <input className={loginClass}
                            type='text' placeholder="Login"/>
                     <input className={passwordClass}
                            type='password' placeholder="Password"/>
-                    <button className='AuthBlock__submit-btn SignInForm__submit-btn'
-                            type='submit'>Sign In
-                    </button>
+                    <button className='submit-btn' type='submit'>Sign In</button>
                 </form>
-                <div className='AuthBlock__error SignInForm__error' style={this.state.errorMessageStyle}></div>
+                <div className='AuthBlock-form-error SignInForm-error'
+                     style={this.state.errorMessageStyle}>
+                </div>
             </div>
         )
     }

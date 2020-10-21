@@ -1,0 +1,67 @@
+.UserInfo {
+    border: 2px solid var(--color-lavender);
+
+    overflow: hidden;
+}
+
+.UserInfo-header {
+    padding: 15px;
+    border-bottom: 2px solid var(--color-lavender);
+
+    display: flex;
+}
+
+.UserInfo-header .avatar {
+    min-width: 80px;
+    height: 60px;
+
+    background-image: url("../../../images/pika-min.jpeg");
+    background-size: 80px;
+}
+
+.UserInfo-header .user {
+    margin-left: 15px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.UserInfo-header .user-login {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.UserInfo-header .logout {
+    margin-top: 3px;
+
+    cursor: pointer;
+    color: rgb(132, 130, 147);
+    font-size: 0.9rem;
+}
+
+.UserInfo-header .logout:hover {
+    text-decoration: underline;
+}
+
+.UserInfo-actions-list {
+    padding: 10px 0;
+
+    list-style: none;
+}
+
+.UserInfo-actions-list .list-item {
+    padding: 0 15px;
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.UserInfo-actions-list a {
+    display: block;
+    line-height: 36px;
+}
+
+.UserInfo-actions-list .list-item:hover {
+    background-color: rgba(223, 217, 226, 0.3);
+}

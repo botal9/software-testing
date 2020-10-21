@@ -1,0 +1,20 @@
+.AuthBlock-header-wrapper {
+    display: flex;
+}
+
+.AuthBlock-header {
+    width: 50%;
+
+    border: none;
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.AuthBlock .header-swap-btn {
+    display: block;
+
+    color: black;
+    line-height: 2rem;
+    text-decoration: none;
+}

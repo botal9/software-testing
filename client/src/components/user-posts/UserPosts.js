@@ -20,7 +20,7 @@ function UserPosts({user}) {
 
     if (posts.length === 0) {
         if (error.length === 0)
-            setError('No posts found');
+            setTimeout(() => setError('No posts found'), 500);
         return <div>{error}</div>
     }
 
