@@ -22,7 +22,7 @@ export function validatePassword(password) {
             message: 'Password should be a non-empty string',
         };
     }
-    const regex = /^\w{5,20}$/
+    const regex = /^.{5,40}$/
     if (!regex.test(password)) {
         return {
             isValid: false,
@@ -39,11 +39,17 @@ export function validateEmail(email) {
             message: 'Email should be a non-empty string',
         };
     }
+    if (email.length > 100) {
+        return {
+            isValid: false,
+            message: 'Maximum email length is 100',
+        };
+    }
     const regex = /^(.+?)@(.+?)\.(.+?)$/
     if (!regex.test(email)) {
         return {
             isValid: false,
-            message: `Incorrect email`,
+            message: 'Incorrect email',
         };
     }
     return {isValid: true};
@@ -62,7 +68,7 @@ export function validateName(name) {
             message: 'Maximum Name length is 100',
         };
     }
-    const regex = /^[A-Za-z ]+$/
+    const regex = /^[A-Za-z\-,. ]+$/
     if (!regex.test(name)) {
         return {
             isValid: false,
