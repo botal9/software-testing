@@ -1,5 +1,6 @@
 :root {
     --color-lavender: rgb(223, 217, 226);
+    --color-lavender-light: rgba(223, 217, 226, 0.3);
     --color-blue: rgb(77, 126, 168);
     --color-red: rgb(155, 29, 32);
     --color-black: rgb(30, 30, 36);
