@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContext from '../../app/UserContext';
+import UserContext from '../../user-context/UserContext';
 import {validateLogin, validatePassword} from './validators';
 
 class SignInForm extends React.Component {

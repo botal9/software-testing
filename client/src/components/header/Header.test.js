@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 import Header from './Header';
-import UserContext from '../app/UserContext';
+import UserContext from '../user-context/UserContext';
 
 describe('<Header/>', () => {
     const userState = {

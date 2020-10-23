@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContext from '../app/UserContext';
+import UserContext from '../user-context/UserContext';
 import AuthBlock from './components/AuthBlock';
 import UserInfo from './components/UserInfo';
 import './Sidebar.css'

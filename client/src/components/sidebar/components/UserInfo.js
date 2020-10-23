@@ -1,4 +1,4 @@
-import UserContext from '../../app/UserContext';
+import UserContext from '../../user-context/UserContext';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './UserInfo.css'

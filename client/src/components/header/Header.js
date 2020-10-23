@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContext from '../app/UserContext'
+import UserContext from '../user-context/UserContext'
 import {Link} from 'react-router-dom';
 import './Header.css'
 import logo from '../../images/pikachu-min.png'

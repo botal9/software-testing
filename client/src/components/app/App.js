@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import Header from '../header/Header';
-import UserContext from './UserContext'
+import UserContext from '../user-context/UserContext'
 import MainContent from '../main-content/MainContent';
 import Sidebar from '../sidebar/Sidebar';
 import Feed from '../feed/Feed';
