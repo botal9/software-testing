@@ -1,7 +1,7 @@
 import React from 'react';
 import UserContext from '../user-context/UserContext';
-import AuthBlock from './components/AuthBlock';
-import UserInfo from './components/UserInfo';
+import AuthBlock from './components/AuthBlock/AuthBlock';
+import UserInfo from './components/UserInfo/UserInfo';
 import './Sidebar.css'
 
 
