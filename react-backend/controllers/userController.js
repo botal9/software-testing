@@ -1,5 +1,6 @@
 const users = {
     'admin': {
+        id: 1,
         login: 'admin',
         password: 'admin',
         email: 'admin@admin.ru',
@@ -8,11 +9,14 @@ const users = {
     }
 };
 
+let gUserId = 2;
+
 function addUser(user) {
     if (user === undefined ||
         user.login === undefined) {
         throw Error('Trying to add invalid user');
     }
+    user.id = gUserId++;
     if (users[user.login] !== undefined) {
         throw Error('Trying to add existing user');
     }
