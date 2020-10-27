@@ -1,0 +1,45 @@
+.Users-container {
+    display: block;
+
+    width: 100%;
+}
+
+.Users-list {
+    list-style: none;
+    width: 100%;
+
+    padding: 0;
+    margin: 15px 0 0;
+    border: 2px solid var(--color-lavender);
+
+    background-color: var(--color-lavender-light);
+    box-sizing: border-box;
+}
+
+.Users-list .list-item {
+    display: flex;
+    line-height: 25px;
+
+    border-bottom: 2px solid var(--color-lavender);
+    box-sizing: border-box;
+}
+
+.Users-list:last-child {
+    border-bottom: none !important;
+}
+
+.Users-list .list-item .index {
+    width: 42px;
+
+    padding-right: 5px;
+
+    text-align: right;
+}
+
+.Users-list .list-item .username {
+    padding-left: 5px;
+
+    text-transform: capitalize;
+
+    border-left: 2px solid var(--color-lavender);
+}

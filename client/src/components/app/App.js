@@ -7,6 +7,7 @@ import MainContent from '../main-content/MainContent';
 import Sidebar from '../sidebar/Sidebar';
 import Feed from '../feed/Feed';
 import UserPosts from '../user-posts/UserPosts';
+import Users from '../users/Users';
 
 class App extends React.Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class App extends React.Component {
                                         <Route path='/Posts'
                                                component={() => <UserPosts user={this.state.userState.user}/>}
                                         />
-                                        <Route path='/Users' component={MainContent}/>
+                                        <Route path='/Users' component={Users}/>
                                         <Redirect from='/' to='/Feed'/>
                                     </Switch>
                                 </main>
