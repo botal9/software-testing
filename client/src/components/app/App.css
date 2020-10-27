@@ -32,6 +32,7 @@
 
 .App main {
     min-width: calc(70% - 20px);
+    max-width: calc(70% - 20px);
 
     margin-right: 20px;
 }
