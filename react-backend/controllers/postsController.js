@@ -19,11 +19,11 @@ const posts = {
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         author: 'admin',
-        postId: 2,
+        postId: 3,
     }
 };
 
-let gPostId = 2;
+let gPostId = 4;
 
 function addPost(post) {
     if (post === undefined ||
