@@ -9,7 +9,7 @@ function Header() {
         <UserContext.Consumer>
             {value =>
                 <header className='Header'>
-                    <Link to='/'>
+                    <Link to='/Feed'>
                         <img src={logo} className='Header-logo' alt='Pikachu logo'/>
                         <div className='Header-site-name'>
                             <span>pikachu</span>
