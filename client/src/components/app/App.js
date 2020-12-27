@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 import './App.css';
 import Header from '../header/Header';
 import UserContext from '../user-context/UserContext'
-import MainContent from '../main-content/MainContent';
+import MockContent from '../main-content/MockContent';
 import Sidebar from '../sidebar/Sidebar';
 import Feed from '../feed/Feed';
 import UserPosts from '../user-posts/UserPosts';
@@ -49,9 +49,9 @@ class App extends React.Component {
                             <div className='content'>
                                 <main>
                                     <Switch>
-                                        <Route path='/Comments' component={MainContent}/>
+                                        <Route path='/Comments' component={MockContent}/>
                                         <Route path='/Feed' component={Feed}/>
-                                        <Route path='/Post/:id' component={MainContent}/>
+                                        <Route path='/Post/:id' component={MockContent}/>
                                         <Route path='/Posts'
                                                component={() => <UserPosts user={this.state.userState.user}/>}
                                         />
