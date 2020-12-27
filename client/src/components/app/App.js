@@ -8,6 +8,7 @@ import Sidebar from '../sidebar/Sidebar';
 import Feed from '../feed/Feed';
 import UserPosts from '../user-posts/UserPosts';
 import Users from '../users/Users';
+import PostForm from '../form/PostForm';
 
 class App extends React.Component {
     constructor(props) {
@@ -49,6 +50,7 @@ class App extends React.Component {
                             <div className='content'>
                                 <main>
                                     <Switch>
+                                        <Route path='/AddPost' component={PostForm}/>
                                         <Route path='/Comments' component={MockContent}/>
                                         <Route path='/Feed' component={Feed}/>
                                         <Route path='/Post/:id' component={MockContent}/>

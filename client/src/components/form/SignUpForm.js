@@ -1,6 +1,6 @@
 import React from 'react';
-import UserContext from '../../../user-context/UserContext';
-import {validateLogin, validateEmail, validatePassword, validateName} from '../validators';
+import UserContext from '../user-context/UserContext';
+import {validateLogin, validateEmail, validatePassword, validateName} from '../sidebar/components/validators';
 
 class SignUpForm extends React.Component {
     static contextType = UserContext;

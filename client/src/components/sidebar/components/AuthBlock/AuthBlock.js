@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AuthBlockHeader from '../AuthBlockHeader/AuthBlockHeader';
-import SignInForm from '../form/SignInForm';
-import SignUpForm from '../form/SignUpForm';
+import SignInForm from '../../../form/SignInForm';
+import SignUpForm from '../../../form/SignUpForm';
 import './AuthBlock.css'
 
 function AuthBlock() {

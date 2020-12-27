@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
     res.status(200).send(posts);
 });
 
-router.post('/', function(req, res) {
+router.post('/add-post', function(req, res) {
     const post = req.body;
     try {
         postController.addPost(post)

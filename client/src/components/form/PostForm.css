@@ -1,0 +1,51 @@
+.PostForm-wrapper {
+    overflow: hidden;
+    min-height: 100px;
+    padding: 10px;
+    width: 100%;
+
+    margin-top: 15px;
+
+    border: 2px solid var(--color-lavender);
+    box-sizing: border-box;
+}
+
+.PostForm-title {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    font-weight: 400;
+    color: rgb(68, 69, 84);
+}
+
+.PostForm-text {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 10px;
+    display: block;
+
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    font-weight: 400;
+    color: rgb(68, 69, 84);
+}
+
+.PostForm .submit-btn {
+    display: block;
+    line-height: 24px;
+    border: none;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+
+    box-sizing: border-box;
+    background-color: var(--color-blue);
+}
