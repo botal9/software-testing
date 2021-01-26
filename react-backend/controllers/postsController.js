@@ -1,4 +1,4 @@
-const posts = {
+let posts = {
     1: {
         title: 'Initial post',
         text: 'Hello, world!',
@@ -57,4 +57,8 @@ function getAllPosts() {
     return postList;
 }
 
-module.exports = { addPost, getPostById, getAllPosts, getAllPostsByUser };
+function resetPostsForTesting() {
+    posts = {};
+}
+
+module.exports = { addPost, getPostById, getAllPosts, getAllPostsByUser, resetPostsForTesting };

@@ -1,4 +1,4 @@
-const users = {
+let users = {
     'admin': {
         id: 1,
         login: 'admin',
@@ -6,6 +6,13 @@ const users = {
         email: 'admin@admin.ru',
         name: 'Vasya Pupkin',
         salary: '300kk/ns'
+    },
+    'Vovan': {
+        id: 2,
+        login: 'Vovan',
+        password: 'vovan1234',
+        email: 'vovan2006@mail.ru',
+        name: 'Vladimir',
     }
 };
 
@@ -49,4 +56,8 @@ function updateUser(userLogin, userInfo) {
     });
 }
 
-module.exports = { addUser, getUserByLogin, deleteUser, getAllUsers, updateUser };
+function resetUsersForTesting() {
+    users = {}
+}
+
+module.exports = { addUser, getUserByLogin, deleteUser, getAllUsers, updateUser, resetUsersForTesting };
