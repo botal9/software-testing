@@ -26,7 +26,7 @@ app.disable('etag');
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/posts', postsRouter);
-app.use('/test', testRouter);
+app.use('/api/v1/test', testRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -14,7 +14,7 @@ function Feed() {
     return (
         <div className='Feed-container'>
             {posts.map(post =>
-                <Post key={post.postId} post={post}/>
+                <Post key={post.id} post={post}/>
             )}
         </div>
     )

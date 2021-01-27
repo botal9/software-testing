@@ -3,13 +3,13 @@ let posts = {
         title: 'Initial post',
         text: 'Hello, world!',
         author: 'admin',
-        postId: 1,
+        id: 1,
     },
     2: {
         title: 'Post #2',
         text: 'Memes <3',
         author: 'admin',
-        postId: 2,
+        id: 2,
     },
     3: {
         title: 'Bomber be like',
@@ -19,7 +19,7 @@ let posts = {
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         author: 'admin',
-        postId: 3,
+        id: 3,
     }
 };
 
@@ -28,11 +28,11 @@ let gPostId = 4;
 function addPost(post) {
     if (post === undefined ||
         post.author === undefined ||
-        post.postId !== undefined) {
+        post.id !== undefined) {
         throw Error('Trying to add invalid post');
     }
-    post.postId = gPostId++;
-    posts[post.postId] = post;
+    post.id = gPostId++;
+    posts[post.id] = post;
 }
 
 function getPostById(id) {

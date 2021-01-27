@@ -8,11 +8,11 @@ router.get('/', function(req, res) {
     res.status(200).send(users);
 });
 
-router.post('/', function(req, res) {
+router.post('/add', function(req, res) {
   const user = req.body;
   try {
       userController.addUser(user);
-      res.status(201).send(user);
+      res.status(200).send(user);
   } catch (e) {
       res.status(400).send(e.message);
   }

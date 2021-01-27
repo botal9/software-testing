@@ -29,8 +29,8 @@ describe('Playwrite tests', () => {
     })
 
     beforeEach(async () => {
-        await fetch(`${server}/test/reset`, {method: "POST"});
-        await fetch( `${server}/api/v1/users/`, {
+        await fetch(`${server}/api/v1/test/reset`, {method: "DELETE"});
+        await fetch( `${server}/api/v1/users/add`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
