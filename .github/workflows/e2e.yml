@@ -1,0 +1,35 @@
+name: e2e
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v2
+
+      - name: set up and run server
+        working-directory: react-backend
+        run: |
+          npm install
+          npm start &
+
+      - name: set up and run client
+        working-directory: client
+        run: |
+          npm install
+          npm start &
+
+      - name: run tests
+        working-directory: client
+        run: |
+          npm run test:playwrite
+          npm run test:cypress

@@ -17,7 +17,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "test:client": "react-scripts test src/components/*",
+    "test:cypress": "cypress run",
+    "test:playwrite": "react-scripts test src/test/playwrite.test.js"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
