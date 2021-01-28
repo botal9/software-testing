@@ -1,4 +1,4 @@
-name: client
+name: spring backend
 
 on:
   push:
@@ -28,4 +28,6 @@ jobs:
           java-version: 8
 
       - name: build and run tests
-        run: ./gradlew build test
+        run: |
+          ./gradlew build
+          ./gradlew test
