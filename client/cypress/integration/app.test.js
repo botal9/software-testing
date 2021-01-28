@@ -7,8 +7,8 @@ describe('Cypress tests', () => {
     }
 
     beforeEach(() => {
-        cy.request('POST', '/test/reset');
-        cy.request('POST', '/api/v1/users/', user);
+        cy.request('DELETE', '/api/v1/test/reset');
+        cy.request('POST', '/api/v1/users/add', user);
 
         cy.visit('/');
         cy.get('form.SignInForm')
@@ -79,7 +79,7 @@ describe('Registration test', () => {
     }
 
     it('register new user', () => {
-        cy.request('POST', '/test/reset');
+        cy.request('DELETE', '/api/v1/test/reset');
         cy.visit('/');
 
         cy.get('.AuthBlock-header-wrapper')

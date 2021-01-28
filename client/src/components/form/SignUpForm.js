@@ -82,7 +82,7 @@ class SignUpForm extends React.Component {
             return;
         }
 
-        const response = await fetch(`/api/v1/users/`, {
+        const response = await fetch(`/api/v1/users/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -90,7 +90,7 @@ class SignUpForm extends React.Component {
             body: JSON.stringify(user)
         });
         switch (response.status) {
-            case 201:
+            case 200:
                 this.hideErrors();
                 const user = await response.json();
                 this.context.login(user);

@@ -8,20 +8,20 @@ router.get('/', function(req, res) {
     res.status(200).send(posts);
 });
 
-router.post('/add-post', function(req, res) {
+router.post('/add', function(req, res) {
     const post = req.body;
     try {
         postController.addPost(post)
-        res.status(201).send(post);
+        res.status(200).send(post);
     } catch (e) {
         res.status(400).send(e.message);
     }
 });
 
 router.get('/:id', function(req, res) {
-    const postId = Number(req.params.id);
+    const id = Number(req.params.id);
     try {
-        const targetPost = postController.getPostById(postId)
+        const targetPost = postController.getPostById(id)
         res.status(200).send(targetPost);
     } catch (e) {
         res.sendStatus(404);

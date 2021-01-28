@@ -15,7 +15,7 @@ function PostForm() {
             author: event.target[0].value,
         }
 
-        await fetch(`/api/v1/posts/add-post`, {
+        await fetch(`/api/v1/posts/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
