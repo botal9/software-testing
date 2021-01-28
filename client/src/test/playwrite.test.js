@@ -74,6 +74,30 @@ describe('Playwrite tests', () => {
         await page.click('a:text("My Posts")');
         await page.waitForSelector('text=No posts found');
     })
+
+    it('check navigation to /Feed by clicking "Pikachu"', async () => {
+        await page.click('a:text("Users")');
+        await page.click('text=pikachu');
+
+        const url = await page.url();
+        expect(url).toMatch('Feed');
+    })
+
+    it('check navigation to /Feed by clicking pikachu image', async () => {
+        await page.click('a:text("Users")');
+        await page.click('img.Header-logo');
+
+        const url = await page.url();
+        expect(url).toMatch('Feed');
+    })
+
+    it('check navigation to /Posts by clicking "Posts" in side panel', async () => {
+        await page.click('a:text("Users")');
+        await page.click('a:text("Posts")');
+
+        const url = await page.url();
+        expect(url).toMatch('Posts');
+    })
 })
 
 

@@ -12,7 +12,7 @@ import ru.botal9.pikachu.repository.UserRepository;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class UserControllerTests {
+class UserControllerTest {
     @Autowired private UserController userController;
     @Autowired private UserRepository userRepository;
 

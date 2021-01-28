@@ -20,7 +20,7 @@ public class TestController {
     }
 
     @DeleteMapping("/reset")
-    void deleteAllPostsAndUse() {
+    void deleteAllPostsAndUsers() {
         this.userRepository.deleteAll();
         this.postRepository.deleteAll();
     }
