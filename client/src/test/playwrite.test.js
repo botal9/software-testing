@@ -39,11 +39,7 @@ describe('Playwrite tests', () => {
         });
 
         page = await browser.newPage();
-        await page.goto(host);
-
-        await page.fill('.SignInForm input:nth-child(1)', user.login);
-        await page.fill('.SignInForm input:nth-child(2)', user.password);
-        await page.click('button:text("Sign in")');
+        await page.goto(`${host}/login/${user.login}/${user.password}`);
     });
 
     afterEach(async () => {

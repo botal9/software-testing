@@ -10,16 +10,7 @@ describe('Cypress tests', () => {
         cy.request('DELETE', '/api/v1/test/reset');
         cy.request('POST', '/api/v1/users/add', user);
 
-        cy.visit('/');
-        cy.get('form.SignInForm')
-            .children()
-            .first()
-            .type(user.login)
-            .next()
-            .type(user.password);
-        cy.get('form.SignInForm')
-            .get('button.submit-btn')
-            .click();
+        cy.visit(`/login/${user.login}/${user.password}`);
     })
 
     it('check log in completeness', () => {

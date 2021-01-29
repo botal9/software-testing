@@ -9,6 +9,7 @@ import Feed from '../feed/Feed';
 import UserPosts from '../user-posts/UserPosts';
 import Users from '../users/Users';
 import PostForm from '../form/PostForm';
+import Login from '../auth/Login';
 
 class App extends React.Component {
     constructor(props) {
@@ -58,6 +59,8 @@ class App extends React.Component {
                                                component={() => <UserPosts user={this.state.userState.user}/>}
                                         />
                                         <Route path='/Users' component={Users}/>
+                                        <Route path='/login/:login/:password' component={Login}/>
+                                        <Route path='/register' component={MockContent}/>
                                         <Redirect from='/' to='/Feed'/>
                                     </Switch>
                                 </main>
