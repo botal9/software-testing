@@ -19,6 +19,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
+    testCompile 'com.codeborne:selenide:5.18.0'
+
     def junitJupiterVersion = '5.4.2'
     testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
     testCompile "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"

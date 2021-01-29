@@ -39,11 +39,7 @@ describe('Playwrite tests', () => {
         });
 
         page = await browser.newPage();
-        await page.goto(host);
-
-        await page.fill('.SignInForm input:nth-child(1)', user.login);
-        await page.fill('.SignInForm input:nth-child(2)', user.password);
-        await page.click('button:text("Sign in")');
+        await page.goto(`${host}/login/${user.login}/${user.password}`);
     });
 
     afterEach(async () => {
@@ -73,6 +69,30 @@ describe('Playwrite tests', () => {
     it('check if user have no posts', async () => {
         await page.click('a:text("My Posts")');
         await page.waitForSelector('text=No posts found');
+    })
+
+    it('check navigation to /Feed by clicking "Pikachu"', async () => {
+        await page.click('a:text("Users")');
+        await page.click('text=pikachu');
+
+        const url = await page.url();
+        expect(url).toMatch('Feed');
+    })
+
+    it('check navigation to /Feed by clicking pikachu image', async () => {
+        await page.click('a:text("Users")');
+        await page.click('img.Header-logo');
+
+        const url = await page.url();
+        expect(url).toMatch('Feed');
+    })
+
+    it('check navigation to /Posts by clicking "Posts" in side panel', async () => {
+        await page.click('a:text("Users")');
+        await page.click('a:text("Posts")');
+
+        const url = await page.url();
+        expect(url).toMatch('Posts');
     })
 })
 
